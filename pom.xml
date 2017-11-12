@@ -1,0 +1,197 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- ============================================================================= -->
+	<!-- General Information -->
+	<!-- ============================================================================= -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>g-hbase</artifactId>
+	<version>0.0.5</version>
+	<packaging>jar</packaging>
+
+	<name>g-hbase</name>
+	<description>G-HBASE is library to manage HBASE No-SQL Realization.</description>
+	<url>http://www.sourceforge.net/p/g-ee</url>
+
+	<!-- ============================================================================= -->
+	<!-- Parent POM Information -->
+	<!-- ============================================================================= -->
+	<parent>
+		<groupId>net.sf.gee</groupId>
+		<artifactId>g-parent</artifactId>
+		<version>0.1.20</version>
+	</parent>
+
+	<!-- ============================================================================= -->
+	<!-- License -->
+	<!-- ============================================================================= -->
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<!-- ============================================================================= -->
+	<!-- Developers -->
+	<!-- ============================================================================= -->
+	<developers>
+		<developer>
+			<name>Giorgio Desideri</name>
+			<email>Giorgio Desideri</email>
+			<organization>Owner</organization>
+			<organizationUrl>http://www.example.com</organizationUrl>
+		</developer>
+	</developers>
+
+	<!-- ============================================================================= -->
+	<!-- Software Content Management -->
+	<!-- ============================================================================= -->
+	<scm>
+		<connection>scm:hg:https://github.com/kallsu/g-hbase</connection>
+		<developerConnection>scm:hg:https://github.com/kallsu/g-hbase</developerConnection>
+		<url>http://github.com/kallsu/g-hbase</url>
+	</scm>
+
+
+	<!-- ============================================================================= -->
+	<!-- Properties Information -->
+	<!-- ============================================================================= -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- G-Library version -->
+		<g-common.version>1.1.6</g-common.version>
+		<g-logger.version>1.2.1</g-logger.version>
+
+		<!-- External Libraries -->
+		<hbase.version>1.3.1</hbase.version>
+		<hadoop.version>2.7.1.2.4.2.12-1</hadoop.version>
+	</properties>
+
+
+	<!-- ============================================================================= -->
+	<!-- Dependencis Information -->
+	<!-- ============================================================================= -->
+	<dependencies>
+		<!-- G-Common -->
+		<dependency>
+			<groupId>net.sf.gee</groupId>
+			<artifactId>g-common</artifactId>
+			<version>${g-common.version}</version>
+		</dependency>
+
+		<!-- G-Logger -->
+		<dependency>
+			<groupId>net.sf.gee</groupId>
+			<artifactId>g-logger</artifactId>
+			<version>${g-logger.version}</version>
+		</dependency>
+
+		<!-- **************************** -->
+		<!-- External Libraries -->
+		<!-- **************************** -->
+
+		<!-- HBase -->
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-client</artifactId>
+			<version>${hbase.version}</version>
+		</dependency>
+
+		<!-- Hadoop dependency -->
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-auth</artifactId>
+			<version>${hadoop.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
+			<version>${hadoop.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-mapreduce-client-core</artifactId>
+			<version>${hadoop.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- ============================================================================= -->
+	<!-- REPOSITORY Information -->
+	<!-- ============================================================================= -->
+	<repositories>
+
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+
+			<id>orssh-releases</id>
+			<name>Open Source Software - Releases</name>
+			<url>https://oss.sonatype.org/content/repositories/releases</url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>hadoop-spring-repository</id>
+			<name>Spring Repository for Hadoop</name>
+			<url>http://repo.spring.io/plugins-release/</url>
+		</repository>
+	</repositories>
+
+	<!-- ============================================================================= -->
+	<!-- Build Information -->
+	<!-- ============================================================================= -->
+	<build>
+
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<configuration>
+							<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

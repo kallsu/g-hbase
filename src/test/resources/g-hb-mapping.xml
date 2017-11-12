@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://www.sourceforge.net/p/g-ee/ghbase_mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.sourceforge.net/p/g-ee/ghbase_mapping ghbase_mapping.xsd ">
+
+	<host>
+		<host>localhost</host>
+		<port>2181</port>
+
+		<!-- <username>username</username> <password>password</password> -->
+	</host>
+
+	<class>net.sf.gee.hbase.test.bean.Pojo</class>
+</mapping>
