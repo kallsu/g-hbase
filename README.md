@@ -1,29 +1,15 @@
 # README #
 
-G-HBASe is the library to manage the HBASE operations.
+G-HBASe is the library to manage the HBASE database..
 
-### What is this repository for? ###
+## Usage ##
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Please consult javadocs.
 
-### How do I get set up? ###
+## Contributing
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Bug reports and pull requests are welcome on G-EE Sourceforge https://sourceforge.net/projects/g-ee/
 
-### Contribution guidelines ###
+## License
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+The code is is available as open source under the terms of the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
